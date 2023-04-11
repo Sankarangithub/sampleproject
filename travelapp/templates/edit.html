@@ -1,0 +1,26 @@
+<html>
+    <head>
+    </head>
+    <body>
+        {% for i in data %}
+        <form action="{% url 'update' id=i.id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label>Destination name</label>
+            <input type="text" name="destinationname" value="{{i.destinationName}}">
+            <br>
+            <label>Destination description</label>
+            <textarea rows="3" cols="25" name="destinationdescription">{{i.destinationDescription}}</textarea>
+            <br>
+            <label>Destination prize</label>
+            <input type="number" name="destinationprize" value="{{i.destinationPrize}}">
+            <br>
+            <label>Destination image</label>
+            <input type="file" name="destinationimage" value="{{i.destinationImage}}">
+            <br>
+            <input type="submit" value="Submit">
+
+
+        </form>
+        {% endfor %}
+    </body>
+</html>

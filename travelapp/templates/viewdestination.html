@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <style>
+            table,th,td{
+                border:1px solid;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>Destination name</th>
+                <th>Destination description</th>
+                <th>Destination prize</th>
+                <th>Destination image</th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.destinationName }}</td>
+                <td>{{ i.destinationDescription }}</td>
+                <td>{{ i.destinationPrize }}</td>
+                <td><img src="{{ i.destinationImage.url }}" style="width: 50px; height: 50px;"></td>
+                <td><a href="{% url 'edit' id=i.id %}"><button>Edit</button></a></td>
+                <td><a href="{% url 'delete' id=i.id %}"><button>Delete</button></a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

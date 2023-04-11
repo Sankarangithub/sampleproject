@@ -1,0 +1,26 @@
+<html>
+    <head>REGISTRATION FORM</head>
+    <body>
+        <form action="{% url 'registerdata' %}" method="post">
+            {% csrf_token %}
+            <label>Username</label>
+            <input type="text" name="username">
+            <br>
+            <br>
+            <label>Password</label>
+            <input type="password" name="password">
+            <br>
+            <br>
+            <label>Email</label>
+            <input type="email" name="email">
+            <br>
+            <br>
+            <label>Phonenumber</label>
+            <input type="number" name="phonenumber">
+            <br>
+            <br>
+            <input type="submit" Value="Register">
+
+        </form>
+    </body>
+</html>
